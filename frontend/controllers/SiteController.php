@@ -84,7 +84,7 @@ class SiteController extends Controller
     {
         $queryModel = new TariffsSearch();
         $dataProvider = $queryModel->search(Yii::$app->request->queryParams);
-
+//        $dataProvider->pagination->pageSize = 30;
         $companies = Companies::find()->asArray()->all();
         $companiesList = ArrayHelper::map($companies, 'id', 'name');
         $providerCount = count($companies);

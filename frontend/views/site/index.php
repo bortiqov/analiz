@@ -68,29 +68,29 @@ $this->title = 'Home';
                     [
                         'attribute' => 'name',
                         'headerOptions' => ['class' => 'justify-content-center'],
-                        'label' => 'Ta\'rif rejasi',
+                        'label' => 'Ta‘rif rejasi',
                         'contentOptions' => ['style' => 'max-width: 130px;', 'class' => ''],
                         'filter' => false
                     ],
                     [
                         'attribute' => 'reg_pay',
                         'headerOptions' => ['class' => 'justify-content-center'],
-                        'label' => 'Registratsion to\'lov',
+                        'label' => 'Registratsiya to’lov',
                         'contentOptions' => ['style' => 'max-width: 180px;', 'class' => ''],
                         'filter' => false
                     ],
                     [
                         'attribute' => 'ab_pay',
                         'headerOptions' => ['class' => 'justify-content-center'],
-                        'label' => 'Abonet to\'lovi',
-                        'contentOptions' => ['style' => 'max-width: 130px;', 'class' => ''],
+                        'label' => 'Abonet to’lovi',
+                        'contentOptions' => ['style' => 'max-width: 140px;', 'class' => ''],
                         'filter' => false
                     ],
                     [
                         'attribute' => 'speed',
                         'headerOptions' => ['class' => 'justify-content-center'],
                         'label' => 'Tezlik',
-                        'contentOptions' => ['style' => 'width: 100px;', 'class' => ''],
+                        'contentOptions' => ['style' => 'width: 80px;', 'class' => ''],
                         'filter' => false
                     ],
                     [
@@ -105,7 +105,7 @@ $this->title = 'Home';
                     [
                         'attribute' => 'un_traffic',
                         'headerOptions' => ['class' => 'justify-content-center'],
-                        'label' => 'Limitdan tashqari trafik',
+                        'label' => 'Qo’shimcha trafik',
                         'contentOptions' => ['style' => 'max-width: 200px;', 'class' => ''],
                         'filter' => false
                     ],
@@ -119,6 +119,7 @@ $this->title = 'Home';
                     [
                         'attribute' => 'bonus',
                         'headerOptions' => ['class' => 'justify-content-center'],
+                        'contentOptions' => ['style' => 'max-width: 150px;', 'class' => ''],
                         'label' => 'Bonuslar',
                         'filter' => false
                     ],

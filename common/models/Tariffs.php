@@ -43,8 +43,8 @@ class Tariffs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reg_pay', 'ab_pay', 'speed', 'status', 'created_at', 'deleted_at','unlim', 'provider_id'], 'integer','message' => 'Kiritilgan qiymat butun son bo\'lishi kerak'],
-            [['name', 'traffic', 'un_traffic', 'shart', 'bonus'], 'string', 'max' => 255,'message' => 'Max belgi 255 tadan ko\'p bo\'lmasligi kerak'],
+            [['reg_pay', 'ab_pay', 'speed', 'status','unlim', 'provider_id'], 'integer','message' => 'Kiritilgan qiymat butun son bo\'lishi kerak'],
+            [['name', 'traffic', 'un_traffic', 'shart', 'bonus', 'created_at', 'deleted_at','updated_at'], 'string', 'max' => 255,'message' => 'Max belgi 255 tadan ko\'p bo\'lmasligi kerak'],
             [['provider_id'],'required','message' => 'Provider tanlashingiz shart'],
         ];
     }

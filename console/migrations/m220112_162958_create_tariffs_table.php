@@ -23,9 +23,9 @@ class m220112_162958_create_tariffs_table extends Migration
             'shart' => $this->string(),
             'bonus' => $this->string(),
             'status' => $this->integer(),
-            'created_at' => $this->integer(),
-            'created_at' => $this->integer(),
-            'deleted_at' => $this->integer(),
+            'created_at' => $this->string(),
+            'updated_at' => $this->string(),
+            'deleted_at' => $this->string(),
         ]);
     }
 

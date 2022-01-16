@@ -40,7 +40,7 @@ class TariffsController extends Controller
     {
         $searchModel = new TariffsSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-
+//        $dataProvider->pagination->pageSize = 50;
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -98,18 +98,14 @@ class TariffsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-//        var_dump($this->request->post());
-//        var_dump($model->unlim);
-//        die();
+
         if ($this->request->isPost && $model->load($this->request->post())) {
             if ($model->unlim) {
                 $model->traffic = null;
             }
-
             if ($model->save()) {
                 return $this->redirect(['index']);
             }
-            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
