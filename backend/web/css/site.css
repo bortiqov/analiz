@@ -1,0 +1,15 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.checkbox-style {
+    font-size: 20px;
+}
+.scroll-page {
+    overflow: hidden !important;
+    overflow-x: scroll !important;
+}
+.form-group .help-block {
+    color: red !important;
+}

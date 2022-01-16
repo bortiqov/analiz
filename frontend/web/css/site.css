@@ -1,0 +1,25 @@
+.help-block{
+    color: red !important;
+}
+
+.field-checkform-provider_id {
+    width: 100%;
+}
+.field-checkform-provider_id2 {
+    width: 100%;
+}
+.field-checkform-tariff_id2 {
+    width: 100%;
+}
+.field-checkform-tariff_id {
+    width: 100%;
+}
+.skyblue {
+    background: skyblue;
+}
+.field-provider ,.field-provider2,.field-provider-id,.field-provider-id2 {
+    width: 100%;
+}
+.field-tariffs-unlim {
+    width: 50%;
+}
