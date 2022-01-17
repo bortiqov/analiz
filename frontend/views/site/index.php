@@ -12,6 +12,7 @@
 use common\models\Tariffs;
 use kartik\select2\Select2;
 use yii\grid\ActionColumn;
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = 'Home';
@@ -63,7 +64,9 @@ $this->title = 'Home';
                         'value' => function ($model) {
                             return $model->companies->name;
                         },
-                        'filter' => $companiesList
+                        'filter' => Html::activeDropDownList($searchModel, 'provider_id', $companiesList,
+                            ['class' => 'v-align-middle form-control', 'prompt' => 'All'])
+//                        'filter' => [$companiesList,'prompt' => 'All']
                     ],
                     [
                         'attribute' => 'name',
@@ -84,7 +87,10 @@ $this->title = 'Home';
                         'headerOptions' => ['class' => 'justify-content-center'],
                         'label' => 'Abonet to’lovi',
                         'contentOptions' => ['style' => 'max-width: 140px;', 'class' => ''],
-                        'filter' => false
+                        'filter' => false,
+                        'value' => function ($model){
+                            return Yii::$app->formatter->asDecimal($model->ab_pay,3);
+                        }
                     ],
                     [
                         'attribute' => 'speed',
@@ -135,11 +141,8 @@ $this->title = 'Home';
                             }
                             return '<span class="badge badge-danger">Arxiv</span>';
                         },
-                        'filter' => [
-                                "All",
-                            Tariffs::STATUS_ACTIVE => "Active",
-                            Tariffs::STATUS_INACTIVE => "Arxive"
-                        ]
+                        'filter' => Html::activeDropDownList($searchModel, 'status', Tariffs::getStatusKeyValue(),
+                            ['class' => 'v-align-middle form-control', 'prompt' => 'All']),
                     ],
                 ]
             ])

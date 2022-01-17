@@ -13,3 +13,27 @@
 .form-group .help-block {
     color: red !important;
 }
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination li {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px;
+}
+.pagination li.active{
+    background: blue;
+    color: white;
+}
+.pagination li a {
+    text-decoration: none;
+    color: black;
+}
+
+.pagination li.active a {
+    color: white !important;
+}

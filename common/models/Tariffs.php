@@ -37,6 +37,15 @@ class Tariffs extends \yii\db\ActiveRecord
         return 'tariffs';
     }
 
+    public static function getStatusKeyValue()
+    {
+        return [
+            self::STATUS_ACTIVE => "Active",
+            self::STATUS_INACTIVE => "Arxiv",
+
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */

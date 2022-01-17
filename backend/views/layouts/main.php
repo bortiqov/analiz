@@ -28,10 +28,9 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
             id="sidenav-main">
-        <div class="sidenav-header">
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-               target="_blank">
-                <img src="./assets/img/logo.png" class="navbar-brand-img h-100" alt="main_logo">
+        <div class="sidenav-header text-center">
+            <a class="navbar-brand m-0" href="/">
+                <img src="/img/logo.png" class="navbar-brand-img h-100" alt="main_logo">
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
@@ -80,7 +79,7 @@ AppAsset::register($this);
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                            <a href="/site/logout" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none"><?=\Yii::$app->user->identity->username?></span>
                             </a>
