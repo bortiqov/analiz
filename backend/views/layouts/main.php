@@ -60,6 +60,22 @@ AppAsset::register($this);
                         <span class="nav-link-text ms-1">Tariffs</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white <?=\Yii::$app->controller->id == 'branch'? "active bg-gradient-success":"" ;?>" href="/branch/index">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Filial</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white <?=\Yii::$app->controller->id == 'port'? "active bg-gradient-success":"" ;?>" href="/port/index">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Port</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>

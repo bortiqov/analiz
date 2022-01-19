@@ -89,7 +89,8 @@ $this->title = 'Home';
                         'contentOptions' => ['style' => 'max-width: 140px;', 'class' => ''],
                         'filter' => false,
                         'value' => function ($model){
-                            return Yii::$app->formatter->asDecimal($model->ab_pay,3);
+                            return $model->ab_pay;
+//                            return Yii::$app->formatter->asDecimal($model->ab_pay,3);
                         }
                     ],
                     [
