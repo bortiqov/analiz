@@ -144,7 +144,7 @@ class SiteController extends Controller
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $cat_id = $parents[0];
-                $out = Tariffs::find()->andWhere(['provider_id' => $cat_id])->all();
+                    $out = Tariffs::find()->andWhere(['provider_id' => $cat_id])->all();
                 return ['output' => $out, 'selected' => ''];
             }
         }

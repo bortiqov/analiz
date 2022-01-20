@@ -79,4 +79,9 @@ class Port extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Branch::className(), ['id' => 'branch_id']);
     }
+    
+    public function afterFind()
+    {
+        $this->date = date('M-Y',$this->date);
+    }
 }
