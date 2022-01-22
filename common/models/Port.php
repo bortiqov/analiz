@@ -41,8 +41,10 @@ class Port extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['adsl_busy', 'adsl_free', 'vdsl_busy', 'vdsl_free', 'vdsl_cipher', 'fttb_busy_cor_seg', 'fttb_free_cor_seg', 'fttb_busy_mas_seg', 'fttb_free_mas_seg', 'gpon_every_olt', 'gpon_every_busy', 'gpon_free_sip_size', 'branch_id', 'date'], 'integer'],
+            [['adsl_busy', 'adsl_free', 'vdsl_busy', 'vdsl_free', 'vdsl_cipher', 'fttb_busy_cor_seg', 'fttb_free_cor_seg', 'fttb_busy_mas_seg', 'fttb_free_mas_seg', 'gpon_every_olt', 'gpon_every_busy', 'gpon_free_sip_size', 'branch_id'], 'integer'],
             [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => Branch::className(), 'targetAttribute' => ['branch_id' => 'id']],
+            [['date'],'safe'],
+            [['branch_id'],'required','message' => 'Filial tanlamadingiz']
         ];
     }
 
@@ -82,6 +84,6 @@ class Port extends \yii\db\ActiveRecord
     
     public function afterFind()
     {
-        $this->date = date('M-Y',$this->date);
+        $this->date = date('d-m-Y',$this->date);
     }
 }

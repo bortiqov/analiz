@@ -72,9 +72,11 @@ class PortController extends Controller
         if ($this->request->isPost) {
 
             if ($model->load($this->request->post())) {
+                var_dump($model->date);
                 $model->date = strtotime($model->date);
+                var_dump($model->date);
                 if ($model->save()) {
-                    return $this->redirect(['view', 'id' => $model->id]);
+                    return $this->redirect(['index']);
                 }
             }
         } else {
@@ -98,7 +100,7 @@ class PortController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

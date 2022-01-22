@@ -56,22 +56,27 @@ $this->title = 'Home';
                     'id' => 'form-data'
             ]);
             ?>
-            <div class="date" style="width: 300px">
-
-                <?php
-
-               echo DatePicker::widget([
-                    'name' => 'PortSearch[date]',
-                    'type' => DatePicker::TYPE_INPUT,
-                    'value' =>$searchModel->date ?? date('m-Y'),
-                    'id' =>'select-date',
-                    'pluginOptions' => [
-                        'autoclose' => true,
-                        'format' => 'mm-yyyy'
-                    ]
-                ]);
-                ?>
-            </div>
+           <div class="d-flex">
+               <div class="date" style="width: 300px">
+                   <?php
+                   echo DatePicker::widget([
+                       'name' => 'PortSearch[date]',
+                       'type' => DatePicker::TYPE_INPUT,
+                       'value' =>$searchModel->date ?? date('d-m-Y'),
+                       'id' =>'select-date',
+                       'pluginOptions' => [
+                           'autoclose' => true,
+                           'format' => 'dd-mm-yyyy'
+                       ]
+                   ]);
+                   ?>
+               </div>
+               <div class="date" style="width: 300px; margin-left: 30px">
+                   <?php
+                   echo $form->field($searchModel, 'branch_id')->dropDownList(\common\models\Branch::getDropDownList(),['prompt' => 'Filialni tanlang','id' => 'branch-id'])->label(false)
+                   ?>
+               </div>
+           </div>
 
 
             <?php \yii\widgets\ActiveForm::end();
