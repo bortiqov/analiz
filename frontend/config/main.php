@@ -41,7 +41,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/check' => 'site/check'
+                '/check' => 'site/check',
+                '/port' => 'site/port'
             ],
         ],
 

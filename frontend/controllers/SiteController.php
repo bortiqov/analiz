@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Companies;
+use common\models\search\PortSearch;
 use common\models\search\TariffsSearch;
 use common\models\Tariffs;
 use frontend\models\CheckForm;
@@ -135,6 +136,39 @@ class SiteController extends Controller
             'providerCount' => $providerCount,
         ]);
     }
+
+    public function actionPort()
+    {
+        $searchModel = new  PortSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $month_start = strtotime('first day of this month', time());
+        $month_end = strtotime('last day of this month', time());
+
+        if ($searchModel->date){
+            $month_start = strtotime('first day of this month', strtotime($searchModel->date));
+            $month_end = strtotime('last day of this month', strtotime($searchModel->date));
+        }
+
+        $dataProvider->query->andWhere(['between','date',$month_start,$month_end]);
+
+        $companies = Companies::find()->asArray()->all();
+        $companiesList = ArrayHelper::map($companies, 'id', 'name');
+        $providerCount = count($companiesList);
+        $tariffsQuery = (new Query())->select('count(*) as tariff')->from('tariffs');
+        $activeTariffsQuery = (new Query())->select('count(*) as active')->from('tariffs')->where(['status' => Tariffs::STATUS_ACTIVE]);
+        $tariffs = (new Query())->select(['tariff' => $tariffsQuery, 'active' => $activeTariffsQuery])->all();
+
+        return $this->render('port', [
+            'dataProvider' => $dataProvider,
+            'tariffs' => $tariffs[0],
+            'searchModel' => $searchModel,
+            'providerCount' => $providerCount,
+        ]);
+    }
+
+
+
 
     public function actionTariffs() {
 
@@ -346,4 +380,7 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+
+
 }

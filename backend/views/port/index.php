@@ -25,6 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             'columns' => [
                                 ['class' => 'yii\grid\SerialColumn'],
                                 'id',
+                                [
+                                    'attribute' => 'branch_id',
+                                    'label' => 'Filial',
+                                    'value' => fn($model) => $model->branch->name,
+                                ],
+                                'date',
                                 'adsl_busy',
                                 'adsl_free',
                                 'vdsl_busy',
@@ -37,8 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'gpon_every_olt',
                                 'gpon_every_busy',
                                 'gpon_free_sip_size',
-                                'branch_id',
-                                'date',
+
+
                                 [
                                     'class' => ActionColumn::className(),
                                     'urlCreator' => function ($action, \common\models\Port $model, $key, $index, $column) {

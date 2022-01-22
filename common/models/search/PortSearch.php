@@ -17,7 +17,8 @@ class PortSearch extends Port
     public function rules()
     {
         return [
-            [['id', 'adsl_busy', 'adsl_free', 'vdsl_busy', 'vdsl_free', 'vdsl_cipher', 'fttb_busy_cor_seg', 'fttb_free_cor_seg', 'fttb_busy_mas_seg', 'fttb_free_mas_seg', 'gpon_every_olt', 'gpon_every_busy', 'gpon_free_sip_size', 'branch_id', 'date'], 'integer'],
+            [['date'],'safe'],
+            [['id', 'adsl_busy', 'adsl_free', 'vdsl_busy', 'vdsl_free', 'vdsl_cipher', 'fttb_busy_cor_seg', 'fttb_free_cor_seg', 'fttb_busy_mas_seg', 'fttb_free_mas_seg', 'gpon_every_olt', 'gpon_every_busy', 'gpon_free_sip_size', 'branch_id'], 'integer'],
         ];
     }
 
@@ -55,6 +56,7 @@ class PortSearch extends Port
             return $dataProvider;
         }
 
+        
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -71,7 +73,6 @@ class PortSearch extends Port
             'gpon_every_busy' => $this->gpon_every_busy,
             'gpon_free_sip_size' => $this->gpon_free_sip_size,
             'branch_id' => $this->branch_id,
-            'date' => $this->date,
         ]);
 
         return $dataProvider;

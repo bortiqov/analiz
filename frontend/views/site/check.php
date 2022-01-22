@@ -41,7 +41,6 @@ $this->title = 'Home';
                 <div class="mb-2"><img class="opacity-50" src="./images/chart.svg" alt=""></div>
                 <div class="text-4xl font-bold text-black text-opacity-50 mb-1"> <?= $tariffs['tariff'] - $tariffs['active'] ?></div>
                 <div class="tex-2xl font-bold text-black text-opacity-50 mb-1">
-                    <Arx></Arx>
                     Arxiv tariflar
                 </div>
             </div>

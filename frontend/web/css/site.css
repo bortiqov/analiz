@@ -47,3 +47,10 @@
 .pagination .active a:hover {
     color: white;
 }
+.scroll-page {
+    overflow: hidden !important;
+    overflow-x: scroll !important;
+}
+table thead {
+    background: palegreen;
+}

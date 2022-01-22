@@ -29,7 +29,7 @@ class Branch extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['people', 'house_hold'], 'number'],
+            [['people', 'house_hold'], 'double'],
             [['name'], 'string', 'max' => 255],
         ];
     }

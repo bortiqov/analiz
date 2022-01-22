@@ -84,6 +84,10 @@ AppAsset::register($this);
                         <a class="nav-link text-white-50 hover:text-white focus:text-white p-0"
                            href="/check">Auto analiz</a>
                     </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link text-white-50 hover:text-white focus:text-white p-0"
+                           href="/port">Port</a>
+                    </li>
                 </ul>
                 <!-- Left links -->
             </div>
