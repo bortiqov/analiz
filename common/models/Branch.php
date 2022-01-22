@@ -41,9 +41,9 @@ class Branch extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'people' => 'People',
-            'house_hold' => 'House Hold',
+            'name' => 'Филиал',
+            'people' => 'Аҳоли (минг киши)',
+            'house_hold' => 'Уй хўжаликлари (минг та)',
         ];
     }
 
