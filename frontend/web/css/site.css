@@ -51,6 +51,6 @@
     overflow: hidden !important;
     overflow-x: scroll !important;
 }
-table thead {
+table .thead-bg {
     background: palegreen;
 }

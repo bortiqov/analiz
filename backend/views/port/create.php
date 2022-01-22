@@ -30,10 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     echo DatePicker::widget([
                                         'name' => 'Port[date]',
                                         'type' => DatePicker::TYPE_INPUT,
-                                        'value' => date('M-Y'),
+                                        'value' => date('d-m-Y'),
                                         'pluginOptions' => [
                                             'autoclose' => true,
-                                            'format' => 'M-yyyy'
+                                            'format' => 'dd-mm-yyyy'
                                         ]
                                     ]);
                                     ?>

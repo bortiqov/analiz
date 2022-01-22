@@ -56,6 +56,20 @@ class PortSearch extends Port
             return $dataProvider;
         }
 
+        if (\Yii::$app->controller->id == 'site'){
+
+            $month_start = strtotime('first day of this month', time());
+            $month_end = strtotime('last day of this month', time());
+
+            if ($this->date){
+                $month_start = strtotime('first day of this month', strtotime($this->date));
+                $month_end = strtotime('last day of this month', strtotime($this->date));
+            }
+
+            $query->andWhere(['>','date',$month_start]);
+            $query->andWhere(['<','date',$month_end]);
+        }
+
         
         // grid filtering conditions
         $query->andFilterWhere([

@@ -59,14 +59,15 @@ $this->title = 'Home';
             <div class="date" style="width: 300px">
 
                 <?php
+
                echo DatePicker::widget([
                     'name' => 'PortSearch[date]',
                     'type' => DatePicker::TYPE_INPUT,
-                    'value' => $searchModel->date,
+                    'value' =>$searchModel->date ?? date('m-Y'),
                     'id' =>'select-date',
                     'pluginOptions' => [
                         'autoclose' => true,
-                        'format' => 'M-yyyy'
+                        'format' => 'mm-yyyy'
                     ]
                 ]);
                 ?>
@@ -77,7 +78,7 @@ $this->title = 'Home';
             ?>
             <div class="scroll-page" style="padding:50px 10px">
                 <table class="mt-5 table table-bordered">
-                    <thead class="">
+                    <thead class="thead-bg">
                     <tr class="text-center">
                         <th rowspan=2 class="">Филиал</th>
                         <th colspan="3">ADSL</th>
@@ -255,7 +256,7 @@ $this->title = 'Home';
 
             <div class="scroll-page" style="margin-top: 80px;padding:50px 10px">
                 <table class="table table-bordered">
-                    <thead class="">
+                    <thead class="thead-bg">
                     <tr class="text-center">
                         <th rowspan=2 class="">Филиал</th>
                         <th colspan="4">Всего портов
@@ -291,7 +292,7 @@ $this->title = 'Home';
                     $arr = [];
                     foreach ($dataProvider->getModels() as $index => $model): ?>
                         <tr>
-                            <td><?= $model->branch->name ?></td>
+                            <th><?= $model->branch->name ?></th>
                             <td><?php
                                 $b = $model->adsl_busy + $model->adsl_free + $model->vdsl_busy +
                                     $model->vdsl_free + $model->fttb_busy_mas_seg +

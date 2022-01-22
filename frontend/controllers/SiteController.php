@@ -142,15 +142,6 @@ class SiteController extends Controller
         $searchModel = new  PortSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        $month_start = strtotime('first day of this month', time());
-        $month_end = strtotime('last day of this month', time());
-
-        if ($searchModel->date){
-            $month_start = strtotime('first day of this month', strtotime($searchModel->date));
-            $month_end = strtotime('last day of this month', strtotime($searchModel->date));
-        }
-
-        $dataProvider->query->andWhere(['between','date',$month_start,$month_end]);
 
         $companies = Companies::find()->asArray()->all();
         $companiesList = ArrayHelper::map($companies, 'id', 'name');
